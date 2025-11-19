@@ -6,9 +6,10 @@ services:
     autoDeploy: true
 
     ports:
-      - port: 1883   # MQTT public port
+      - port: 1883
         protocol: tcp
-      - port: 10000  # Render-required HTTP port
+      - port: 8080
         protocol: tcp
 
     healthCheckPath: /
+    healthCheckPort: 8080

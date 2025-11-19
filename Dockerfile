@@ -5,10 +5,7 @@ RUN apk add --no-cache python3
 COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 COPY healthcheck.py /healthcheck.py
 
-# Render requires internal port = $PORT (HTTP)
-EXPOSE 10000
-
-# MQTT port
+EXPOSE 8080
 EXPOSE 1883
 
 CMD mosquitto -c /mosquitto/config/mosquitto.conf & \
