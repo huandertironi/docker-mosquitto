@@ -1,16 +1,14 @@
 services:
   - type: web
-    name: mosquitto-broker
+    name: mqtt-service
     env: docker
     plan: free
     autoDeploy: true
 
-    # Expose MQTT port publicly
     ports:
-      - port: 1883
+      - port: 1883   # MQTT public port
         protocol: tcp
-      - port: 8080
+      - port: 10000  # Render-required HTTP port
         protocol: tcp
 
     healthCheckPath: /
-    healthCheckPort: 8080
